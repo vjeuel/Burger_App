@@ -1,0 +1,91 @@
+:root {
+   --p1: #D97904;
+   --p2: #F2B705;
+   --s1: #D92B04;
+   --s2: #8C0E03;
+   --ex: #618C03;
+   --wt: #f2f2f2;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 10px;
+   height: 100vh;
+}
+
+h1 {
+   font-family: 'Days One', sans-serif;
+   font-size: 6rem;
+   text-align: center;
+   color: #f2f2f2;
+}
+
+h2{
+   font-family: 'Crete Round', serif;
+   font-size: 2rem;
+   text-align: center;
+   letter-spacing: 0.25rem;
+   word-spacing: 0.25rem;
+   background-color: var(--ex);
+   color: var(--wt);
+   padding: 1.5rem;
+   border-top-left-radius: 2rem;
+   border-top-right-radius: 2rem;
+}
+
+/* MAIN */
+#logo {
+   background-color: var(--s2);
+   padding: 3rem;
+}
+
+.wide {
+   background: url(../img/burger.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: bottom center;
+   padding: 5rem;
+}
+
+.container {
+   width: 80%;
+   height: 80vh;
+   margin: 0 auto;
+   padding: 2rem;
+   background-color: rgba(216, 121, 4, 0.5);
+   border-radius: 2rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 2rem;
+}
+
+.here, .gone {
+   background-color: rgba(242, 242, 242, 0.5);
+   border-radius: 2rem;
+
+}
+
+/* FONTS */
+/*
+font-family: 'Crete Round', serif;
+font-family: 'Days One', sans-serif;
+*/
+
+/* COLORS */
+/* Color Theme Swatches in Hex */
+.Variety-of-spices-and-herbs-on-kitchen-table-1-hex { color: #618C03; }
+.Variety-of-spices-and-herbs-on-kitchen-table-2-hex { color: #F2B705; }
+.Variety-of-spices-and-herbs-on-kitchen-table-3-hex { color: #D97904; }
+.Variety-of-spices-and-herbs-on-kitchen-table-4-hex { color: #D92B04; }
+.Variety-of-spices-and-herbs-on-kitchen-table-5-hex { color: #8C0E03; }
+
+/* Color Theme Swatches in RGBA */
+.Variety-of-spices-and-herbs-on-kitchen-table-1-rgba { color: rgba(96, 140, 2, 1); }
+.Variety-of-spices-and-herbs-on-kitchen-table-2-rgba { color: rgba(242, 182, 4, 1); }
+.Variety-of-spices-and-herbs-on-kitchen-table-3-rgba { color: rgba(216, 121, 4, 1); }
+.Variety-of-spices-and-herbs-on-kitchen-table-4-rgba { color: rgba(216, 43, 4, 1); }
+.Variety-of-spices-and-herbs-on-kitchen-table-5-rgba { color: rgba(140, 14, 2, 1); }
+.Variety-of-spices-and-herbs-on-kitchen-table-5-rgba { color: rgba(242, 242, 242, 1); }
