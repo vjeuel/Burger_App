@@ -19,16 +19,14 @@
          <h2>devoured</h2>
          <div class="each-line">{{#each burgers}} {{#if devoured}} 
             <p>{{this.burger_name}}</p>
-            {{!-- <a href="{{this.id}}">devoured</a> --}}
+            <a href="{{this.id}}">trash</a>
          {{/if}} {{/each}}</div>
       </section>
 
       {{!-- Create --}}
-      <section class="create">
-         <h2>Create your burger!</h2>
-         <input type="text" id="burg" name="burger_name">
-      <section>
-
-      </section>
+      <form class="create">
+         <input type="text" id="cb" name="burger_name" placeholder="create your burger!">
+         <a href="{{this.id}}" type="submit" name="devoured" value="0">create</a>
+      </form>
    </div>
 </main>
