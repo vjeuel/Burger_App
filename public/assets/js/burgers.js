@@ -1,17 +1,17 @@
 $(function () {
-   $(".change-devour").on("click", event => {
+   $(".change-devoured").on("click", event => {
       const id = $(this).data("id");
-      const newDevour = $(this).data("newdevour");
+      const newDevoured = $(this).data("newdevoured");
 
-      const newDevourState = {
-         devoured: newDevour
+      const newDevouredState = {
+         devoured: newDevoured
       };
 
       $.ajax("/api/burgers/" + id, {
          type: "PUT",
-         data: newDevourState
+         data: newDevouredState
       }).then(() => {
-         console.log(("Changed devour to", newDevour));
+         console.log(("Changed devoured to", newDevoured));
          location.reload();
       }
       );
@@ -22,9 +22,8 @@ $(function () {
 
       const newBurger = {
          name: $("#burg").val().trim(),
-         devour: $("[name=devour]:checked").val().trim()
+         devour: $("[name=devoured]:checked").val().trim()
       };
-
 
       $.ajax("/api/burgers", {
          type: "POST",

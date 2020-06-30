@@ -1,17 +1,34 @@
 <section id="logo">
-   <h1>Eat-Da-Burger</h1>
+   <img src="/assets/img/logo.png" alt="">
 </section>
 
 
 <main class="wide">
    <div class="container">
+      {{!-- On the table  --}}
       <section class="here">
          <h2>on your table</h2>
+         <div class="each-line">{{#each burgers}} {{#unless devoured}} 
+            <p>{{this.burger_name}}</p>
+            <a href="{{this.id}}">devour it!</a>
+         {{/unless}} {{/each}}</div>
       </section>
+
+      {{!-- Devoured  --}}
       <section class="gone">
-         <h2>gone</h2>
+         <h2>devoured</h2>
+         <div class="each-line">{{#each burgers}} {{#if devoured}} 
+            <p>{{this.burger_name}}</p>
+            {{!-- <a href="{{this.id}}">devoured</a> --}}
+         {{/if}} {{/each}}</div>
+      </section>
+
+      {{!-- Create --}}
+      <section class="create">
+         <h2>Create your burger!</h2>
+         <input type="text" id="burg" name="burger_name">
+      <section>
+
       </section>
    </div>
 </main>
-
-{{!-- button --}}

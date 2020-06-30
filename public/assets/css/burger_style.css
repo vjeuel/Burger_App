@@ -36,18 +36,35 @@ h2{
    border-top-right-radius: 2rem;
 }
 
+p, a {
+   font-family: 'Crete Round', serif;
+   font-size: 1.75rem;
+}
+
+a {
+   text-decoration: none;  
+}
+
 /* MAIN */
 #logo {
-   background-color: var(--s2);
-   padding: 3rem;
+   width: 100%;
+   height: 12rem;
+   margin: 0 auto;
+   display: grid;
+   justify-items: center;
+   align-items: center;
+}
+
+#logo img {
+   width: 50%;
 }
 
 .wide {
    background: url(../img/burger.jpg);
    background-size: cover;
    background-repeat: no-repeat;
-   background-position: bottom center;
-   padding: 5rem;
+   background-position: center center;
+   padding: 5rem 2rem;
 }
 
 .container {
@@ -59,14 +76,49 @@ h2{
    border-radius: 2rem;
    display: grid;
    grid-template-columns: 1fr 1fr;
+   grid-template-rows: auto auto;
    grid-gap: 2rem;
 }
 
 .here, .gone {
    background-color: rgba(242, 242, 242, 0.5);
    border-radius: 2rem;
-
+   height: 100%;
 }
+
+.each-line {
+   padding: 2rem;
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   align-items: center;
+   grid-gap: 1rem;
+}
+
+.each-line a {
+   background-color: var(--s1);
+   color: var(--wt);
+   padding: 1rem;
+   border-radius: 0.5rem;
+}
+
+/* CREATE */
+.create {
+   grid-area: 2 / 1 / 3 / 3;
+}
+
+.create input {
+   font-family: 'Crete Round', serif;
+   font-size: 2rem;
+   text-align: center;
+   letter-spacing: 0.25rem;
+   color: var(--ex);
+   width: 100%;
+   height: 5rem;
+   border-end-end-radius: 2rem;
+   border-end-start-radius: 2rem;
+}
+
+
 
 /* FONTS */
 /*
