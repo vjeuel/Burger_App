@@ -1,9 +1,9 @@
 $(function () {
    $(".change-devoured").on("click", event => {
-      const id = $(this).data("id");
-      const newDevoured = $(this).data("newdevoured");
+      let id = $(this).data("id");
+      let newDevoured = $(this).data("newDevoured");
 
-      const newDevouredState = {
+      let newDevouredState = {
          devoured: newDevoured
       };
 
@@ -20,9 +20,8 @@ $(function () {
    $(".create-form").on("submit", event => {
       event.preventDefault();
 
-      const newBurger = {
-         name: $("#cb").val().trim(),
-         devour: $("[name=devoured]:checked").val().trim()
+      let newBurger = {
+         burger_name: $("#cb").val().trim()
       };
 
       $.ajax("/api/burgers", {
@@ -35,7 +34,7 @@ $(function () {
    });
    
    $(".delete-burger").on("click", () => {
-      const id = $(this).data("id");
+      let id = $(this).data("id");
       $.ajax("/api/burgers/" + id, {
          type: "DELETE"
       }).then(() => {

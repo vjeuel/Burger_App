@@ -1,16 +1,16 @@
-<section id="logo">
-   <img src="/assets/img/logo.png" alt="">
-</section>
 
 
 <main class="wide">
+   <section id="logo">
+      <img src="/assets/img/logo.png" alt="">
+   </section>
    <div class="container">
       {{!-- On the table  --}}
       <section class="here">
          <h2>on your table</h2>
          <div class="each-line">{{#each burgers}} {{#unless devoured}} 
-            <p>{{this.burger_name}}</p>
-            <a href="{{this.id}}">devour it!</a>
+            <p>{{burger_name}}</p>
+            <button class="change-devoured" data-id="{{id}}" data-newDevoured="{{devoured}}">devour it!</button>
          {{/unless}} {{/each}}</div>
       </section>
 
@@ -19,14 +19,14 @@
          <h2>devoured</h2>
          <div class="each-line">{{#each burgers}} {{#if devoured}} 
             <p>{{this.burger_name}}</p>
-            <a href="{{this.id}}">trash</a>
+            <button class="delete-burger" data-id="{{this.id}}">trash</button>
          {{/if}} {{/each}}</div>
       </section>
 
       {{!-- Create --}}
       <form class="create-form">
          <input type="text" id="cb" name="burger_name" placeholder="create your burger!">
-         <a href="{{this.id}}" name="devoured" value="0">create</a>
+         <button type="submit">create</button>
       </form>
    </div>
 </main>

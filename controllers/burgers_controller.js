@@ -5,7 +5,7 @@ const burger = require("../models/burger.js");
 
 router.get("/", (req, res) => {
    burger.all(data => {
-      const hbsObject = {
+      let hbsObject = {
          burgers: data
       };
       console.log(hbsObject);
@@ -15,16 +15,17 @@ router.get("/", (req, res) => {
 
 router.post("/api/burgers", (req, res) => {
    burger.create([
-      "name", "devoured"
+      "burger_name", "devoured"
    ], [
-      req.body.name, req.body.devoured
+      req.body.burger_name, req.body.devoured
    ], result => {
       res.json({ id: result.insertId });
    });
+   console.log(result, "- burgers_controller - Test 5");
 });
 
 router.put("/api/burgers/:id", (req, res) => {
-   const condition = "id = " + req.params.id;
+   let condition = `id = ${req.params.id}`;
 
    console.log("condition", condition);
    
@@ -40,7 +41,7 @@ router.put("/api/burgers/:id", (req, res) => {
 });
 
 router.delete("/api/burgers/:id", (req, res) => {
-   const condition = "id = " + req.params.id;
+   let condition = `id = ${req.params.id}`;
 
    burger.delete(condition, result => {
       if (result.affectedRows == 0) {
