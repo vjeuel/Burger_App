@@ -8,13 +8,15 @@ const mysql = require("mysql");
 //    database: "burgers_db"
 // });
 
-const connection = process.env.JAWSDB_URL ? process.env.JAWSDB_URL : {
-   host: "localhost",
+const connectionConfig = process.env.JAWSDB_URL ? process.env.JAWSDB_URL : {
+   host: "ryvdxs57afyjk41z.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
    port: 3306,
-   user: "root",
-   password: "",
-   database: "burgers_db"
+   user: "l37uf6rbn95yydgh",
+   password: "za70xg6svgs6drn2",
+   database: "wediu08j3ts8dc43"
 };
+
+const connection = mysql.createConnection(connectionConfig);
 
 connection.connect(err => {
    if (err) {
