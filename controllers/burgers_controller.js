@@ -17,11 +17,10 @@ router.post("/api/burgers", (req, res) => {
    burger.create([
       "burger_name", "devoured"
    ], [
-      req.body.burger_name, req.body.devoured
+      req.body.burger_name, 0
    ], result => {
       res.json({ id: result.insertId });
    });
-   console.log(result, "- burgers_controller - Test 5");
 });
 
 router.put("/api/burgers/:id", (req, res) => {
@@ -30,7 +29,7 @@ router.put("/api/burgers/:id", (req, res) => {
    console.log("condition", condition);
    
    burger.update({
-      devoured: req.body.devoured
+      devoured: 1
    }, condition, result => {
       if (result.changeRows == 0) {
          return res.status(404).end();

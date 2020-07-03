@@ -1,10 +1,9 @@
 const connection = require("../config/connection.js");
 
-// It might not be necessary
 function printQuestions(num) {
    const arr = [];
 
-   for (let i = 0; i < num; i++) {
+   for (let i = 0; i < num.length; i++) {
       arr.push("?");  
    }
    return arr.toString();
@@ -13,8 +12,6 @@ function printQuestions(num) {
 function objToSql(ob) {
    const arr = [];
 
-   
-   
    for (let key in ob) {
       const value = ob[key];
       if (Object.hasOwnProperty.call(ob, key)) {
@@ -22,10 +19,6 @@ function objToSql(ob) {
             value = `' ${value} '`;
          }
          arr.push(`${key} = ${value}`);
-
-         console.log(value, "- orm - Test 2");
-         console.log(key, "- orm - Test 3");
-         console.log(ob, "- orm - Test 4");
       }  
    }
    return arr.toString();
@@ -55,8 +48,7 @@ const orm = {
    },
    update: (table, objColVals, condition, cb) => {
       let queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
-      console.log(objToSql(objColVals), "- orm - Test 1");
-      
+
       console.log(queryString);
 
       connection.query(queryString, (err, result) => {
